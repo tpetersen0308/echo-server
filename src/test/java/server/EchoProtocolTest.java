@@ -7,7 +7,7 @@ import java.io.*;
 
 public class EchoProtocolTest {
   @Test
-  public void itEchosBackInputStreamMessages() {
+  public void shouldEchoBackInputStreamMessages() {
     BufferedReader in = new BufferedReader(new StringReader("echo"));
     OutputStream bytesOut = new ByteArrayOutputStream();
     PrintWriter out = new PrintWriter(new OutputStreamWriter(bytesOut), true);
