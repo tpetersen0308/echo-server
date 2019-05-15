@@ -8,14 +8,16 @@ import java.io.*;
 
 class SocketStub extends Socket {
   private OutputStream outputStream;
+  private InputStream inputStream;
 
   public SocketStub() {
     this.outputStream = new ByteArrayOutputStream();
+    this.inputStream = new ByteArrayInputStream("echo".getBytes());
   }
 
   @Override
   public InputStream getInputStream() {
-    return new ByteArrayInputStream("echo".getBytes());
+    return inputStream;
   }
 
   @Override
