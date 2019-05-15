@@ -1,6 +1,9 @@
 # Development Notes
 NOTES.md
 
+# Target files
+/target/*
+
 # Compiled class file
 *.class
 
