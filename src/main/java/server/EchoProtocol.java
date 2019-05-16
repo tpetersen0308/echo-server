@@ -5,16 +5,16 @@ import java.io.PrintWriter;
 import java.io.IOException;
 
 public class EchoProtocol {
-  BufferedReader in;
-  PrintWriter out;
+  EchoClient client;
 
-  public EchoProtocol(BufferedReader in, PrintWriter out) {
-    this.in = in;
-    this.out = out;
+  public EchoProtocol(EchoClient client) {
+    this.client = client;
   }
 
   public void execute() {
     try {
+      PrintWriter out = client.getOutputStreamWriter();
+      BufferedReader in = client.getInputStreamReader();
       out.println(in.readLine());
     } catch (IOException e) {
       System.err.println(e);
