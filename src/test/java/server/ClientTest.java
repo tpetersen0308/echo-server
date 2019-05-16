@@ -1,32 +1,13 @@
 package server;
 
-import server.Client;
-import static org.junit.Assert.*;
+import server.SocketStub;
+import static org.junit.Assert.assertEquals;
 import org.junit.Test;
-import java.net.Socket;
-import java.io.*;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.BufferedReader;
 
-class SocketStub extends Socket {
-  private OutputStream outputStream;
-  private InputStream inputStream;
-
-  public SocketStub() {
-    this.outputStream = new ByteArrayOutputStream();
-    this.inputStream = new ByteArrayInputStream("echo".getBytes());
-  }
-
-  @Override
-  public InputStream getInputStream() {
-    return inputStream;
-  }
-
-  @Override
-  public OutputStream getOutputStream() {
-    return outputStream;
-  }
-}
-
-public class EchoClientTest {
+public class ClientTest {
   @Test
   public void canRead() throws IOException {
     SocketStub socket = new SocketStub();
