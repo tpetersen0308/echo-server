@@ -21,7 +21,7 @@ Create the project:
 
 Start the Server:
 
-å`./bin/echo_server` (Defaults to running on port 5000)
+`./bin/echo_server` (Defaults to running on port 5000)
 
 or
 
