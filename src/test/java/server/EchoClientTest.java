@@ -31,7 +31,7 @@ public class EchoClientTest {
   public void canRead() throws IOException {
     SocketStub socket = new SocketStub();
     EchoClient client = new EchoClient(socket);
-    BufferedReader reader = client.createInputStreamReader();
+    BufferedReader reader = client.getInputStreamReader();
     assertEquals("echo", reader.readLine());
   }
 
@@ -40,7 +40,7 @@ public class EchoClientTest {
     SocketStub socket = new SocketStub();
     EchoClient client = new EchoClient(socket);
 
-    PrintWriter writer = client.createOutputStreamWriter();
+    PrintWriter writer = client.getOutputStreamWriter();
     writer.println("echo");
     assertEquals("echo\n", socket.getOutputStream().toString());
   }
