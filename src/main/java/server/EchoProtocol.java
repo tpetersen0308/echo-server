@@ -5,9 +5,9 @@ import java.io.PrintWriter;
 import java.io.IOException;
 
 public class EchoProtocol {
-  EchoClient client;
+  Client client;
 
-  public EchoProtocol(EchoClient client) {
+  public EchoProtocol(Client client) {
     this.client = client;
   }
 

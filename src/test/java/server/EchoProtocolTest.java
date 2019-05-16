@@ -1,7 +1,7 @@
 package server;
 
 import server.EchoProtocol;
-import server.EchoClient;
+import server.Client;
 import static org.junit.Assert.*;
 import org.junit.Test;
 import java.io.*;
@@ -31,7 +31,7 @@ public class EchoProtocolTest {
   @Test
   public void shouldEchoBackInputStreamMessages() throws IOException {
     Socket socket = new SocketStub();
-    EchoClient client = new EchoClient(socket);
+    Client client = new Client(socket);
     EchoProtocol echoProtocol = new EchoProtocol(client);
     echoProtocol.execute();
     assertEquals("echo\n", socket.getOutputStream().toString());

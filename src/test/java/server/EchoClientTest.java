@@ -1,6 +1,6 @@
 package server;
 
-import server.EchoClient;
+import server.Client;
 import static org.junit.Assert.*;
 import org.junit.Test;
 import java.net.Socket;
@@ -30,7 +30,7 @@ public class EchoClientTest {
   @Test
   public void canRead() throws IOException {
     SocketStub socket = new SocketStub();
-    EchoClient client = new EchoClient(socket);
+    Client client = new Client(socket);
     BufferedReader reader = client.getInputStreamReader();
     assertEquals("echo", reader.readLine());
   }
@@ -38,7 +38,7 @@ public class EchoClientTest {
   @Test
   public void canWrite() throws IOException {
     SocketStub socket = new SocketStub();
-    EchoClient client = new EchoClient(socket);
+    Client client = new Client(socket);
 
     PrintWriter writer = client.getOutputStreamWriter();
     writer.println("echo");

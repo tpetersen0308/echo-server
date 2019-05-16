@@ -7,12 +7,12 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 
-public class EchoClient {
+public class Client {
   Socket socket;
   private BufferedReader inputStreamReader;
   private PrintWriter outputStreamWriter;
 
-  public EchoClient(Socket socket) throws IOException {
+  public Client(Socket socket) throws IOException {
     this.socket = socket;
     this.inputStreamReader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
     this.outputStreamWriter = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()), true);

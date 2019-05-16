@@ -13,7 +13,7 @@ public class Server {
   private static void start(int port) throws IOException {
     ServerSocket serverSocket = new ServerSocket(port);
     Socket clientSocket = serverSocket.accept();
-    EchoClient client = new EchoClient(clientSocket);
+    Client client = new Client(clientSocket);
     EchoProtocol protocol = new EchoProtocol(client);
     protocol.execute();
     serverSocket.close();
