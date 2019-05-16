@@ -12,10 +12,14 @@ public class Server {
 
   private static void start(int port) throws IOException {
     ServerSocket serverSocket = new ServerSocket(port);
-    Socket clientSocket = serverSocket.accept();
-    Client client = new Client(clientSocket);
+    Client client = getClient(serverSocket);
     EchoProtocol protocol = new EchoProtocol(client);
     protocol.execute();
     serverSocket.close();
+  }
+
+  private static Client getClient(ServerSocket serverSocket) throws IOException {
+    Socket clientSocket = serverSocket.accept();
+    return new Client(clientSocket);
   }
 }
