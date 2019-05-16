@@ -1,8 +1,6 @@
 package server;
 
 import java.io.IOException;
-import java.io.BufferedReader;
-import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.ServerSocket;
 
@@ -16,9 +14,7 @@ public class Server {
     ServerSocket serverSocket = new ServerSocket(port);
     Socket clientSocket = serverSocket.accept();
     EchoClient client = new EchoClient(clientSocket);
-    BufferedReader in = client.createInputStreamReader();
-    PrintWriter out = client.createOutputStreamWriter();
-    EchoProtocol protocol = new EchoProtocol(in, out);
+    EchoProtocol protocol = new EchoProtocol(client);
     protocol.execute();
     serverSocket.close();
   }
