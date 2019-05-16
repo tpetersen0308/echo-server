@@ -18,6 +18,8 @@ Create the project:
 `mvn package`
 
 Start the Server:
-`./bin/echo_server` -- Defaults to running on port 5000
+`./bin/echo_server` (Defaults to running on port 5000)
+
 or
+
 `java -cp target/echo-server-1.0-SNAPSHOT.jar server.Server <PORT>`
