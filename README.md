@@ -12,13 +12,16 @@ Clone or download the repository.
 ## Basic Usage
 
 Run tests: 
+
 `mvn test`
 
 Create the project:
+
 `mvn package`
 
 Start the Server:
-`./bin/echo_server` (Defaults to running on port 5000)
+
+å`./bin/echo_server` (Defaults to running on port 5000)
 
 or
 
