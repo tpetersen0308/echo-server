@@ -17,7 +17,10 @@ public class EchoProtocol {
 
   public void execute() {
     try {
-      out.println(in.readLine());
+      String clientMessage;
+      while ((clientMessage = in.readLine()) != null) {
+        out.println(clientMessage);
+      }
     } catch (IOException e) {
       System.err.println(e);
     }
